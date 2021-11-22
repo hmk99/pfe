@@ -1,0 +1,278 @@
+.Home, .Login{
+    height: auto;
+}
+.Login{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.Home, .Login{
+    width: 100%;
+}
+.Login_form{
+    min-height: 90vh;
+    height: auto;
+    margin-top: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.Login form{
+    border-radius: 20px;
+    height: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#Login_form_input{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+nav{
+    position: fixed;
+    width: 100%;
+    background: #373B44;
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+    background: linear-gradient(to right, #4286f4, #373B44); 
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#logo{
+    width: 10%;
+    height: 100%;
+    object-fit: contain;
+}
+nav h1, .ham_menu h1{
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+nav h1:hover{
+    color: #ffc000;
+}
+.ham{
+    cursor: pointer;
+    height: 50%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ham_menu{
+    width: 0;
+    opacity: 0;
+    height: 100vh;
+    background-color: #ffc000;
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 2;
+}
+.Home_first{
+    min-height: 100vh;
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.Home_first h1{
+    transform: rotate(-7deg);
+}
+.Home_first img{
+    width: 60%;
+    transform: rotate(-5deg);
+}
+.Home_first div{
+    height: 50%;
+    width: 80%;
+}
+.Home_first div p{
+    line-height: 200%;
+    max-width: 80vh;
+    font-weight: 500;
+}
+.Home_first button{
+    height: 10%;
+    width: 20%;
+    border: none;
+    border-radius: 20px;
+    background-color: #ffc000;
+    cursor: pointer;
+    font-weight: 700;
+}
+.ham_menu button{
+    border: none;
+    border-radius: 20px;
+    background-color: #4286f4;
+    cursor: pointer;
+    font-weight: 700;
+}
+.Home_first button:hover{
+    animation: shake 0.2s;
+    color: #373B44;
+    background-color: #ffe65c;
+}
+.ham_menu button:hover{
+    animation: shake 0.2s;
+    color: #373B44;
+    background-color: #619eff;
+}
+.ham_menu h1:hover{
+    color: #4286f4;
+}
+@keyframes shake {
+    50% {transform: rotate(-5deg);}
+    100% {transform: rotate(0);}
+}
+
+.Home_second{
+    min-height: 90vh;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+.Home_second > div{
+    min-height: 80%;
+    height: auto;
+    width: 95%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.Home_second div div{
+    height: auto;
+    border: none;
+    border-radius: 20px;
+    width: 300px;
+    min-height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+}
+.Home_second div div:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.Home_second div div:hover p{
+    opacity: 1;
+}
+.Home_second div div p{
+    line-height: 20px;
+    max-width: 80%;
+    font-weight: 500;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+img + p{
+    font-weight: 700 !important;
+    line-height: 20px;
+    max-width: 80%;
+    opacity: 1 !important;
+}
+#link{
+    text-decoration: none;
+    color: black;
+}
+#Login_return{
+    cursor: pointer;
+    margin-right: 20px;
+}
+#Login_return:hover{
+    fill: red;
+}
+
+
+@media only screen and (min-width: 768px){
+    button{
+        font-size: 25px;
+    }
+    .ham_menu button{
+        height: 10%;
+        width: 50%;
+    }
+    h1{
+        font-size: 25px;
+    }
+    .Home_first h1{
+        font-size: 8vh;
+    }
+    .Login form{
+        width: 35%;
+    }
+    #login_form_input{
+        width: 40vh;
+    }
+}
+
+
+@media only screen and (min-width: 479px) and (max-width: 768px){ 
+    button{
+        font-size: 12px;
+        width: 70%;
+    }
+    .ham_menu button{
+        height: 8%;
+        width: 60%;
+    }
+    h1{
+        font-size: 20px;
+    }
+    .Home_first h1{
+        font-size: 5vh;
+    }
+    p{
+        font-size: 15px;
+    }
+    .Login form{
+        width: 50%;
+    }
+    #Login_Form_input{
+        width: 25vh;
+    }
+}
+
+@media only screen and (max-width: 479px){
+    button{
+        font-size: 10px;
+    }
+    .ham_menu button{
+        height: 5%;
+        width: 70%;
+    }
+    h1{
+        font-size: 15px;
+    }
+    .Home_first h1{
+        font-size: 3vh;
+    }
+    p{
+        font-size: 12px;
+    }
+    .Login form{
+        width: 60%;
+    }
+    #Login_form_input{
+        width: 20vh;
+        height: 10px;
+    }
+    .Home_first{
+        width: 100%;
+    }
+}
