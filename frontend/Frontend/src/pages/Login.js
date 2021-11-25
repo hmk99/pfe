@@ -19,17 +19,17 @@ function Login() {
             <div className="Login_form">
                 <center>
                     <h1>
-                        Connecte-toi pour t'amuser et apprendre plus rapidement
+                        قم بتسجيل الدخول للحصول على المتعة والتعلم بشكل أسرع
                     </h1>
                 </center>
                 <form action="">
-                    <TextField id="Login_form_input" helperText="Please enter your email" label="Email" />
-                    <TextField id="Login_form_input" helperText="Please enter your password" label="Password" />
-                    <Button variant="contained">Login</Button>
+                    <TextField id="Login_form_input" helperText="قم بإدخال البريد الإلكتروني" label="البريد الإلكتروني" />
+                    <TextField id="Login_form_input" helperText="قم بإدخال كلمة السر" label="كلمة السر" />
+                    <Button variant="contained">تسجبل الدخول</Button>
                 </form>
                 <center>
                     <h3 style={{textDecoration: "underline"}}>
-                        Vous n'avez pas de compte?<Link to="/register" style= {{color: "black"}}><span style= {{color: "red", cursor: "pointer"}}> Inscrivez-vous maintenant!</span></Link>
+                        ليس لديك حساب؟<Link to="/register" style= {{color: "black"}}><span style= {{color: "red", cursor: "pointer"}}> قم بإنشاء حسابك الآن</span></Link>
                     </h3>
                 </center>
             </div>

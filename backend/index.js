@@ -37,6 +37,16 @@ app.get("/getusers", (req, res)=> {
         } 
     })
 })
+app.get("/tests", (req, res)=> {
+    db.query("select * from test", (err, result)=> {
+        if(err){
+            console.log(err)
+        }else{
+            res.send(result)
+            console.log(result)
+        }
+    })
+})
 app.get("/todos", (req, res)=> {
     db.query("select * from todo order by id desc", (err, result)=> {
         if(err){
@@ -134,6 +144,6 @@ app.get("/articles", (req, res)=> {
     })
 })
 
-app.listen(5000,()=>{
+app.listen(3030,()=>{
     console.log('server started')
 })

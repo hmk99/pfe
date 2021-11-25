@@ -1,17 +1,15 @@
-.Home, .Login{
+.Home, .Login, .Register{
     height: auto;
+    width: 100%;
 }
-.Login{
+.Login, .Register{
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
-.Home, .Login{
-    width: 100%;
-}
-.Login_form{
+.Login_form, .Register_form{
     min-height: 90vh;
     height: auto;
     margin-top: 10vh;
@@ -21,7 +19,7 @@
     align-items: center;
     flex-direction: column;
 }
-.Login form{
+.Login form, .Register form{
     border-radius: 20px;
     height: 60%;
     display: flex;
@@ -213,7 +211,7 @@ img + p{
     .Home_first h1{
         font-size: 8vh;
     }
-    .Login form{
+    .Login form, .Register form{
         width: 35%;
     }
     #login_form_input{
@@ -240,7 +238,7 @@ img + p{
     p{
         font-size: 15px;
     }
-    .Login form{
+    .Login form, .Register form{
         width: 50%;
     }
     #Login_Form_input{
@@ -265,7 +263,7 @@ img + p{
     p{
         font-size: 12px;
     }
-    .Login form{
+    .Login form, .Register form{
         width: 60%;
     }
     #Login_form_input{

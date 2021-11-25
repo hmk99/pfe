@@ -6,9 +6,9 @@ import {BrowserRouter as Router , Routes ,Route, Link} from 'react-router-dom'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import MenuIcon from '@mui/icons-material/Menu'
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from '@mui/icons-material/Close'
 import { Squash as Hamburger } from 'hamburger-react'
-import axios from 'axios';
+import axios from 'axios'
 
 function App() {
   return (
@@ -51,7 +51,7 @@ const Home= ()=> {
         <img id="logo" src={logo} alt="" />
         <Link id="link" to="/login" >
         <h1>
-          Se connecter
+          تسجيل الدخول
         </h1>
         </Link>
         <div className="ham" onClick={ham_menu}>
@@ -60,37 +60,39 @@ const Home= ()=> {
       </nav>
       <div className="ham_menu">
         <button>
-          Commencez à apprendre
+          ابدأ بالتعلم
         </button>
         <Link id="link" to="/login" >
           <h1>
-            Se connecter
+            تسجيل الدخول
           </h1>
         </Link>
         <select name="langues" id="langues">
-          <option value="Arabe">Arabe</option>
-          <option value="Francais">Francais</option>
-          <option value="Anglais">Anglais</option>
+          <option value="Arabe">العربية</option>
+          <option value="Francais">الفرنسية</option>
+          <option value="Anglais">الانجليزية</option>
         </select>
       </div>
       <div className="Home_first">
         <div className="">
           <h1>
-            Apprends l'Arabe facilement
+            تعلم التصريف العربي بسهولة
           </h1>
           <img src="https://f.hubspotusercontent20.net/hubfs/6968579/Memrise%20July%202020/Images/blue-flash.svg" alt=""/>
           <br />
           <br />
-          <p>
-            Des phrases utiles dans la vie de tous les jours. Enseignées via des clips vidéo avec des habitant.e.s du coin
-          </p>
+          <center>
+            <p>
+              أمثلة و تمارين بسيطة من أجل التعلم بسرعة و بمتعة
+            </p>
+          </center>
         </div>
-        <button>Lancez-vous</button>
+        <button>إبدأ الآن</button>
       </div>
 
       <div className="Home_second">
         <h1>
-          Pourquoi Memrise ?
+          لماذا Memrise ?
         </h1>
         <img src="https://f.hubspotusercontent20.net/hubfs/6968579/underline.png" alt="" />
         <br />
