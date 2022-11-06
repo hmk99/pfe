@@ -1,0 +1,120 @@
+.Level{
+    background-image: linear-gradient(to right, #ffc000, #4286f4);
+    min-height: 100vh;
+    height: auto;
+}
+.Level h1{
+    margin-top: 0;
+}
+.Level h1 span{
+    background: linear-gradient(to top left, #ffc000 3%, #ffff 50%, #0062ff 97%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    font-style: italic;
+    font-weight: 700;
+}
+.LevelBoxes, .Levels{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+.Levels{
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: linear-gradient(to right, #ffc000, #4286f4);
+}
+.LevelBoxes{
+    min-height: 90vh;
+}
+.LevelBoxes > div{
+    height: 50vh;
+    width: 50vh;
+    border: 1px solid black;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Levels > div{
+    min-height: 90vh;
+    height: auto;
+    width: 95%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    margin-bottom: 20px;
+}
+.Levels div div{
+    height: 10vh;
+    width: 10vh;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-size: 10px;
+}
+.Level div div, .Levels div div{
+    cursor: pointer;
+}
+.flipInner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 50px;
+}
+.Level div div:hover .flipInner{
+    transform: rotateY(180deg);
+}
+.flipInner p, .flipInner h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    color: white;
+}
+.flipInner p{
+    transform: rotateY(180deg);
+}
+.LevelBoxes div:hover, .Levels div div:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+}
+.Levels div div:hover h3{
+    animation: shake 0.2s;
+    color: white;
+}
+.Levels div div.isLevel{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+    color: white;
+}
+@keyframes shake {
+    50% {transform: rotate(-20deg);}
+    100% {transform: rotate(0);}
+}
+#link{
+    text-decoration: none;
+    color: black;
+}
+
+.LevelTest{
+    min-height: 100vh;
+    width: 100%;
+}
+

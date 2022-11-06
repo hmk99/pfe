@@ -1,0 +1,307 @@
+.Level1{
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+}
+nav{
+    position: fixed;
+    width: 100%;
+    background: #373B44;
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+    background: linear-gradient(to right, #4286f4, #373B44); 
+    min-height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+}
+nav h1{
+    margin-right: 20px;
+}
+.quiz{
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    gap: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.blanks{
+    min-height: 40vh;
+    height: auto;
+}
+.blanks ol{
+    width: 50%;
+    height: 90%;
+}
+.blanks ol li{
+    margin: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.blanks ol li input{
+    width: 70%;
+}
+.qte{
+    min-width: 45%;
+    min-height: 30vh;
+    height: auto;
+    width: auto;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border: 1px black solid;
+    border-radius: 30px;
+}
+.alloptions{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 5px;
+}
+.alloptions div{
+    height: 5vh;
+    width: 40%;
+    border: solid 1px black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.alloptions div:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: black;
+    color: white;
+}
+.alloptions div:hover p{
+    animation: shake 0.2s;
+}
+.blanks input{
+    height: 20px;
+    width: 80px;
+    border: 0.5px solid black;
+}
+#btn{
+    height: 30px;
+    width: 50px;
+}
+#blanks_btn{
+    font-size: 15px;
+}
+#titleFir{
+    font-size: 20px; 
+    font-weight: 700;
+    color: #004cb6;
+    text-decoration: underline;
+    font-style: italic;
+}
+#titleSec{
+    font-size: 18px;
+    font-weight: 700;
+    color: #0088ff;
+    text-decoration: underline;
+    font-style: italic;
+}
+#titleThr{
+    font-size: 15px;
+    font-weight: 700;
+    color: #00c8ff;
+    text-decoration: underline;
+    font-style: italic;
+}
+.noIndentList{
+    padding-right: 0;
+    width: 100% !important;
+}
+.logOut{
+    box-shadow: none !important;
+    border: none !important;
+    color: black !important;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700 !important;
+}
+.logOut:hover{
+    background-color: #ffc000 !important;
+    color: #004cb6 !important;
+}
+.logOut svg{
+    display: none !important;
+}
+.logOut div{
+    display: none !important;
+}
+#logo{
+    margin-left: 10px;
+}
+
+@keyframes shake {
+    50% {transform: rotate(-15deg);}
+    100% {transform: rotate(0);}
+}
+.userInfos{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-right: 0.5px solid gray;
+    border-left: 0.5px solid white;
+}
+#userName{
+    background: linear-gradient(to top left, #ffc000 3%, #ffff 50%, #0062ff 97%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    font-style: italic;
+    font-weight: 700;
+    cursor: auto;
+    font-size: 100%;
+}
+#imgProfile{
+    border-radius: 50%;
+    height: 60%;
+    width: min-content;
+    object-fit: cover;
+    cursor: pointer;
+}
+.dropDown{
+    z-index: 3;
+    position: fixed;
+    top: 10vh;
+    right: calc(30% - 13%);
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 13%;
+    min-height: 25vh;
+    height: auto;
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    transform-origin: 0% 0%;
+    transform: scaleY(0);
+}
+.dropDown li{
+    list-style: none;
+    cursor: pointer !important;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.dropDown li:first-child{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.dropDown li:not(:last-child):hover{
+    background-color: #ffc000;
+    color: #004cb6;
+}
+.dropDown button:not(.logOut){
+    border-radius: 20px !important;
+    width: unset !important;
+}
+#dropLink{
+    text-decoration: none;
+    color: black;
+}
+#dropLink:hover{
+    color: #004cb6;
+}
+#imgEx{
+    margin: auto;
+    max-width: 80%;
+}
+.ratingBtns button:focus{
+    border: 2px solid black;
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(0, 0, 0);
+}
+.levelInterLinks a{
+    position: relative;
+    height: 50%;
+    cursor: pointer;
+    font-weight: bolder;
+}
+.levelInterLinks h1 a:after{
+    content: " ";
+    display: block;
+    height: 1px;
+    width: 0;
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+    background: #0062ff;
+}
+.levelInterLinks h1 a:hover{
+    color: #0062ff;
+}
+.levelInterLinks a:hover:after{
+    width: 100%;
+}
+
+@media only screen and (min-width: 479px) and (max-width: 768px){
+    .qte{
+        width: 85%;
+    }
+    .blanks ol{
+        width: 60%;
+    }
+    .userInfos{
+        width: 40%;
+    }
+    .dropDown{
+        font-size: 13px;
+        width: 18vh;
+        height: 20vh;
+        right: calc(40% - 18vh);
+    }
+    .logOut{
+        font-size: 15px !important;
+    }
+}
+
+@media only screen and (max-width: 479px){
+    .qte{
+        width: 90%;
+    }
+    .blanks ol{
+        width: 80%;
+    }
+    .userInfos{
+        width: 55%;
+        position: relative;
+    }
+    .dropDown{
+        font-size: 10px;
+        width: 15vh;
+        height: 17vh;
+        right: calc(55% - 15vh);
+    }
+    .logOut{
+        font-size: 10px !important;
+    }
+}

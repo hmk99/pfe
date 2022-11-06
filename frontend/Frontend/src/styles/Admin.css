@@ -1,0 +1,330 @@
+.AdminCourse, .AdminNotes{
+    width: 100%;
+}
+.AdminCourse nav, .AdminNotes nav{
+    position: absolute;
+    right: 0;
+}
+.users{
+    width: 100%;
+    min-height: 80vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+    gap: 50px;
+    align-items: center;
+}
+.dropDown li{
+    cursor: auto;
+}
+#dropLink, li span{
+    cursor: pointer;
+}
+.dropDown li:hover #dropLink, .dropDown li:hover span{
+    color: #004cb6;
+}
+#searchBar{
+    margin-top: 15vh;
+    margin-right: 5px;
+    border: 0.5px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 5vh;
+    width: 30%;
+}
+#userImage{
+    height: 50px;
+    width: 50px;
+}
+.userNameImg{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 25%;
+    border: none !important;
+    box-shadow: none;
+    margin-right: 0;
+    flex-wrap: wrap;
+}
+#deleteBtn{
+    color: black !important;
+    border: 0.1px solid red;
+    width: 40px;
+    height: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+#deleteBtn:hover{
+    color: white !important;
+    background-color: red !important;
+}
+.user, .usersInfos{
+    padding: 0 5px;
+    width: 90%;
+    min-height: 10vh;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.usersInfos div{
+    height: 100%;
+    width: 30%;
+}
+.user img{
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.pagBtns{
+    width: 80%;
+    min-height: 5vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding: 2px;
+}
+.pagBtns a{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+    border: 0.5px solid gray;
+    border-radius: 5px;
+    font-size: 15px;
+    display: block;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+}
+.pagBtns a:hover{
+    background-color: #0062ff;
+    color: white;
+}
+.pagAct{
+    background-color: #0062ff;
+    color: white;
+    border-radius: 5px;
+}
+.prevBtn, .nxtBtn{
+    height: 20px;
+    width: 45px !important;
+}
+.adminCLinks{
+    margin-top: 10vh;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#cours, #rules, #conj, #dc, #qcm{
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+}
+#rules{
+    padding-top: 10vh;
+}
+table{
+    width: 90%;
+    height: auto;
+    table-layout: inherit;
+}
+th{
+    font-style: italic;
+    margin: auto;
+}
+td, tr{
+    margin: auto;
+}
+#tableDef{
+    width: 60%;
+}
+.tableChg{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    gap: 5px;
+}
+.tableChg input{
+    width: 90%;
+    height: 80%;
+}
+#tableBtn{
+    height: 20px !important;
+    width: 30px !important;
+}
+table{
+    width: 90%;
+}
+th, td, table{
+    border-collapse: collapse;
+    border: 0.5px solid black;
+}
+.txt{
+    width: 100%;
+    overflow-wrap: break-word;
+}
+.inputAnim{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+#upRuleArea{
+    border: black 0.1px solid;
+}
+#defModal{
+    position: absolute;
+    height: 50vh;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+}
+.AdminData{
+    background-color: white;
+}
+.AdminDataLinks a{
+    text-decoration: none;
+}
+.AdminDataLinks a:hover{
+    color: red !important;
+}
+.AdminDataLinks a, .adminCLinks #link{
+    position: relative;
+    height: 50%;
+    cursor: pointer;
+    font-weight: bolder;
+}
+.adminCLinks #link:after, .AdminDataLinks a:after{
+    content: " ";
+    display: block;
+    height: 1px;
+    width: 0;
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+}
+.adminCLinks #link:after{
+    background: #0062ff;
+}
+.AdminDataLinks a:after{
+    background: red;
+}
+.adminCLinks #link:hover, .AdminDataLinks a:hover{
+    color: #0062ff;
+}
+.adminCLinks #link:hover:after, .AdminDataLinks a:hover:after{
+    width: 100%;
+}
+#delUserBtn{
+    width: min-content;
+}
+@media only screen and (min-width: 479px) and (max-width: 768px){
+    #userImage{
+        height: 40px;
+        width: 40px;
+    }
+    #deleteBtn{
+        height: 15px;
+        font-size: 12px;
+    }
+    #delUserBtn, #updRuleBtn, #delRuleBtn{
+        font-size: 12px;
+        height: 20px;
+        min-width: 30px;
+        max-width: 30px;
+    }
+    .users h1{
+        font-size: 12px;
+    }
+    .users h3{
+        font-size: 10px;
+    }
+    .pagBtns a{
+        font-size: 12px;
+    }
+    table{
+        width: 95%;
+    }
+    .tableChgCas{
+        width: 50% !important;
+    }
+    .txt{
+        width: 50vh;
+        overflow-wrap: break-word;
+    }
+    #upRuleArea{
+        height: 15vh !important;
+        width: 12vh !important;
+    }
+    #searchBar{
+        height: 4vh;
+        width: 40%;
+    }
+    .inputAnim button{
+        height: 20px;
+        width: 40px;
+    }
+    
+}
+
+@media only screen and (max-width: 479px){
+    #userImage{
+        height: 20px;
+        width: 20px !important;
+        font-size: 10px;
+    }
+    #deleteBtn{
+        width: 25px;
+        height: 15px;
+        font-size: 10px;
+    }
+    #delUserBtn, #updRuleBtn, #delRuleBtn{
+        font-size: 10px;
+        height: 18px;
+        min-width: 25px;
+        max-width: 25px;
+    }
+    .users h1{
+        font-size: 10px;
+    }
+    .users h3{
+        font-size: 8px;
+    }
+    .pagBtns a{
+        font-size: 10px;
+    }
+    .txt{
+        max-width: 30vh;
+        overflow-wrap: break-word;
+    }
+    #upRuleArea{
+        height: 20vh !important;
+        width: 10vh !important;
+    }
+    #searchBar{
+        height: 3vh;
+        width: 50%;
+    }
+    .inputAnim button{
+        height: 15px;
+        width: 10px !important;
+    }
+}

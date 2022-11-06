@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "hmk",
+    "password": "hmk@99",
+    "database": "pfe",
+    "host": "localhost",
+    "dialect": "mysql",
+    "charset": "utf8mb4"
+  },
+  "test": {
+    "username": "hmk",
+    "password": "hmk@99",
+    "database": "pfe",
+    "host": "localhost",
+    "dialect": "mysql",
+    "charset": "utf8mb4"
+  },
+  "production": {
+    "username": "hmk",
+    "password": "hmk@99",
+    "database": "pfe",
+    "host": "localhost",
+    "dialect": "mysql",
+    "charset": "utf8mb4"
+  }
+}

@@ -1,0 +1,122 @@
+.Chat{
+    width: 100%;
+    min-height: 100vh;
+}
+.ChatSuggs{
+    min-height: 0vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 30px;
+}
+.ChatSuggs > div{
+    width: 100%;
+    min-height: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.ChatSuggsUser img{
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: all 0.1s ease-in-out;
+}
+.ChatSuggsUser{
+    min-height: 100%;
+    min-width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+.ChatSuggsUser:hover p, .ChatSuggsUser:hover h3{
+    color: #0062ff;
+}
+.ChatSuggsUser:hover img{
+    height: 35px;
+    width: 35px;
+}
+#ChatModal, #delMsgModal{
+    border: 1px solid black !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+#ChatModal{
+    position: relative;
+    height: 80vh;
+    width: 70%;
+    margin: auto;
+    margin-top: 5vh;
+}
+#delMsgModal{
+    position: absolute !important;
+    margin: auto;
+    top: 25vh !important;
+    height: 20vh !important;
+    width: 50% !important;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.Users{
+    margin-top: 5px;
+    width: 30%;
+    height: 20vh;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.Users::-webkit-scrollbar {
+    display: none;
+}
+.Users h4{
+    width: 80% !important;
+    height: 100% !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Users h4:hover{
+    color: #0062ff;
+    background-color: rgb(243, 243, 243);
+}
+.SearchUser{
+    margin-top: 10vh;
+}
+.SearchUserInputs{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 10vh;
+    position: relative;
+}
+.SearchUser #searchBar{
+    width: 90%;
+    margin: 0 !important;
+    height: 50% !important;
+}
+
+.msgContainer{
+    height: 75%; 
+    overflow-y: scroll;
+    padding: 10px;
+    overflow-x: hidden !important;
+}
+
+#sendMsgBtn:hover{
+    color: #0062ff;
+}
+#delMsgBtn:hover{
+    color: red;
+    cursor: pointer;
+}

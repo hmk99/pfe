@@ -1,0 +1,108 @@
+.Stat, .Param{
+    width: 100%;
+    min-height: 100vh;
+}
+.userStatInfos{
+    width: 50%;
+}
+.userStatInfos button:not(.mainLogOut, .logOut){
+    border-radius: 20px !important;
+    width: unset !important;
+}
+.line{
+    width: 100%;
+    height: 0.09px;
+    box-shadow: 0px 10px #a9a9a9;
+}
+#statFilterInput{
+    width: 50%;
+    height: 20px;
+}
+.statBtn{
+    overflow: hidden;
+}
+.statBtn button{
+    height: 25px !important;
+}
+.Param header{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10vh;
+}
+.Param header ul{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+}
+.Param header li{
+    cursor: pointer;
+    font-weight: bolder;
+    text-decoration: none;
+}
+.Param li:first-child{
+    color: #4286f4;
+}
+li #csv:hover{
+    color: #4286f4 !important;
+}
+.Param li:last-child:hover{
+    color: red;
+}
+.Param #pers{
+    height: 70vh;
+}
+.Param .mainLogOut{
+    height: 50px;width: 200px;background-color: rgb(245, 179, 179) !important;
+    border-radius: 20px !important;
+    box-shadow: none !important;
+    border: none !important;
+    color: black !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Param .mainLogOut:hover{
+    background-color: rgb(255, 62, 62) !important;
+    color: white !important;
+}
+.mainLogOut svg{
+    display: none !important;
+}
+.mainLogOut div{
+    display: none !important;
+}
+
+
+
+
+@media only screen and (min-width: 768px){
+    .userStatInfos{
+        width: 60%;
+    }
+    h1{
+        font-size: 25px;
+    }
+}
+@media only screen and (min-width: 479px) and (max-width: 768px){
+    .userStatInfos{
+        width: 80%;
+    }
+    h1{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 470px){
+    .userStatInfos{
+        width: 90%;
+    }
+    h1{
+        font-size: 15px;
+    }
+}

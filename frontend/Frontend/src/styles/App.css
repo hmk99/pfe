@@ -1,27 +1,93 @@
+#dark, #dark .userInfos{
+    background-color: rgb(19, 0, 70);
+    color: white;
+}
+#dark .levelInterLinks a:after{
+    background: #ffc000;
+}
+#dark .levelInterLinks a:hover{
+    color: #ffc000;
+}
+#dark .Levels{
+    background-image: linear-gradient(to right, #CCCC00, #21447c);
+}
+#dark .dropDown{
+    color: black;
+}
+#dark *, #dark #Dnd{
+    border-color: whitesmoke;
+}
+#light{
+    background-color: whitesmoke;
+}
+#dark nav{
+    background: linear-gradient(to right, #21447c, #cddcff);
+}
+#dark input{
+    background: rgb(210, 210, 210);
+}
+#dark .ham_menu{
+    background-color: #CCCC00;
+}
+#dark .dropDown *:not(:last-child):hover{
+    background-color: #CCCC00 !important;
+    color: #619eff !important;
+}
+#dark .alloptions div:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: whitesmoke;
+    color: black;
+}
+#dark #titleFir{
+    color: #ffc000;
+}
+#dark #titleSec{
+    color: #fcdf89;
+}
+#dark .pagAct, #dark .pagBtns a:hover{
+    background-color: #ffc000;
+    color: black;
+}
+#dark .pagAct, #dark .pagBtns a{
+    color: white;
+}
+#dark .adminCLinks #link{
+    color: white;
+}
+#dark .adminCLinks #link:after{
+    background: #ffc000;
+}
+#dark .adminCLinks #link:hover{
+    color: #ffc000;
+}
+#dark .Home_second_container_elem:hover{
+    box-shadow: 0 4px 8px 0 rgba(192, 192, 192, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+}
 .Home, .Login, .Register{
-    height: auto;
     width: 100%;
 }
 .Login, .Register{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 5px;
 }
 .Login_form, .Register_form{
     min-height: 90vh;
-    height: auto;
     margin-top: 10vh;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    gap: 10px;
 }
-.Login form, .Register form{
+.Login_form form, .Register_form form{
+    padding: 10px;
     border-radius: 20px;
-    height: 60%;
+    min-height: 60vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -32,6 +98,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 nav{
+    z-index: 3;
     position: fixed;
     width: 100%;
     background: #373B44;
@@ -51,8 +118,11 @@ nav h1, .ham_menu h1{
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
-nav h1:hover{
-    color: #ffc000;
+nav h1:hover, .Footer a:hover, .Footer #footerIcon:hover{
+    color: #ffc000 !important;
+}
+.Footer{
+    background-color: yellow !important;
 }
 .ham{
     cursor: pointer;
@@ -62,12 +132,10 @@ nav h1:hover{
     justify-content: center;
     align-items: center;
 }
-.ham_menu{
-    width: 0;
-    opacity: 0;
+.ham_menu{ 
     height: 100vh;
     background-color: #ffc000;
-    position: absolute;
+    position: fixed;
     top: 10vh;
     right: 0;
     transition: all 0.5s ease-in-out;
@@ -78,40 +146,42 @@ nav h1:hover{
     z-index: 2;
 }
 .Home_first{
+    width: 100%;
     min-height: 100vh;
-    height: auto;
-    width: auto;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
 }
-.Home_first h1{
-    transform: rotate(-7deg);
+.Home_first_container{
+    height: 40%;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
 }
 .Home_first img{
     width: 60%;
     transform: rotate(-5deg);
 }
-.Home_first div{
-    height: 50%;
-    width: 80%;
-}
-.Home_first div p{
+.Home_first_container p{
     line-height: 200%;
-    max-width: 80vh;
     font-weight: 500;
 }
 .Home_first button{
-    height: 10%;
-    width: 20%;
+    height: 5%;
+    width: 15%;
     border: none;
     border-radius: 20px;
     background-color: #ffc000;
     cursor: pointer;
     font-weight: 700;
 }
-.ham_menu button{
+.darkBtn{
+    border-radius: 20px !important;
+    width: unset !important;
+}
+.ham_menu button:not(.darkBtn){
     border: none;
     border-radius: 20px;
     background-color: #4286f4;
@@ -137,25 +207,18 @@ nav h1:hover{
 }
 
 .Home_second{
-    min-height: 90vh;
-    height: auto;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
+    min-height: 100vh;
 }
-.Home_second > div{
-    min-height: 80%;
-    height: auto;
+.Home_second_container{
+    height: 90%;
     width: 95%;
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
-.Home_second div div{
+.Home_second_container_elem{
     height: auto;
-    border: none;
     border-radius: 20px;
     width: 300px;
     min-height: 80%;
@@ -165,13 +228,13 @@ nav h1:hover{
     align-items: center;
     margin: 0;
 }
-.Home_second div div:hover{
+.Home_second_container_elem:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.Home_second div div:hover p{
+.Home_second_container_elem:hover p{
     opacity: 1;
 }
-.Home_second div div p{
+.Home_second_container_elem p{
     line-height: 20px;
     max-width: 80%;
     font-weight: 500;
@@ -195,7 +258,52 @@ img + p{
 #Login_return:hover{
     fill: red;
 }
-
+.loginGBtn{
+    height: 5vh;
+    width: max-content;
+    border: 0.125rem solid #373B44 !important;
+    box-shadow: rgb(43 54 72) 0px 0.25rem 0px !important;
+    border-radius: 20px !important;
+    color: #373B44 !important;
+}
+.loginGBtn:hover{
+    background-color: #4286f4 !important;
+    color: white !important;
+}
+.loginGBtn div{
+    background-color: transparent !important;
+}
+.kep-login-facebook{
+    height: 5vh !important;
+    width: max-content ;
+    border: 0.125rem solid #373B44 !important;
+    box-shadow: rgb(43 54 72) 0px 0.25rem 0px !important;
+    border-radius: 20px !important;
+    color: #373B44 !important;
+    color: white !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.kep-login-facebook:hover{
+    background-color: white !important;
+    color: #4c69ba !important;
+}
+.animOne, .animTwo{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.animOne{
+    height: 100vh;
+    background-color: #0062ff;
+    z-index: 5;
+}
+.animTwo{
+    width: 100%;
+    background-color: #ffc000;
+    z-index: 4;
+}
 
 @media only screen and (min-width: 768px){
     button{
@@ -216,6 +324,10 @@ img + p{
     }
     #login_form_input{
         width: 40vh;
+    }
+    .Home_first div p{
+        line-height: 150%;
+        font-weight: 500;
     }
 }
 
@@ -244,6 +356,19 @@ img + p{
     #Login_Form_input{
         width: 25vh;
     }
+    .loginGBtn{
+        height: 5vh;
+        width: 35vh;
+    }
+    .kep-login-facebook{
+        height: 5vh !important;
+        width: 35vh !important;
+    }
+    .Home_first div p{
+        line-height: 100%;
+        font-weight: 500;
+        max-width: 30vh;
+    }
 }
 
 @media only screen and (max-width: 479px){
@@ -264,7 +389,7 @@ img + p{
         font-size: 12px;
     }
     .Login form, .Register form{
-        width: 60%;
+        width: 90%;
     }
     #Login_form_input{
         width: 20vh;
@@ -272,5 +397,18 @@ img + p{
     }
     .Home_first{
         width: 100%;
+    }
+    .loginGBtn{
+        height: 5vh;
+        width: 25vh;
+    }
+    .kep-login-facebook{
+        height: 5vh !important;
+        width: 25vh !important;
+    }
+    .Home_first div p{
+        line-height: 100%;
+        font-weight: 500;
+        max-width: 20vh;
     }
 }
