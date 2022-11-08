@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, MissingJoinTableError, JoinColumn } from "typeorm"
 import {Type} from "./Type"
 
 @Entity()
@@ -10,7 +10,10 @@ export class Cours {
     @Column()
     def: string
 
+    @Column()
+    typeId: number
     @ManyToOne(type => Type, type => type.cours)
-    typeId: Type
+    @JoinColumn({name: "typeId"})
+    type: Type
 
 }

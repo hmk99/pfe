@@ -28,19 +28,19 @@ export class User {
     @Column()
     level: number 
 
-    @OneToMany(type => Notes, notes => notes.userId)
+    @OneToMany(type => Notes, notes => notes.user)
     notes: Notes[]
 
-    @OneToMany(type => Stats, stats => stats.userId)
+    @OneToMany(type => Stats, stats => stats.user)
     stats: Stats[]
 
-    @OneToMany(type => Userqsts, userqsts => userqsts.userId)
+    @OneToMany(type => Userqsts, userqsts => userqsts.user)
     userqsts: Userqsts[]
 
-    @OneToMany(type => Msg, msgs => msgs.userId)
+    @OneToMany(type => Msg, msgs => msgs.user)
     userMsgs: Msg[]
 
-    @OneToMany(type => Msg, msgs => msgs.guestId)
+    @OneToMany(type => Msg, msgs => msgs.guest)
     guestMsgs: Msg[]
 
 }

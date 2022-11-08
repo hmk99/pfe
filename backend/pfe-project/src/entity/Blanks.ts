@@ -47,7 +47,7 @@ export class Blanks {
     @Column()
     op4: string
 
-    @OneToMany(type => Userqsts, userqsts => userqsts.qstId)
+    @OneToMany(type => Userqsts, userqsts => userqsts.qst)
     userqsts: Userqsts[]
 
 }   

@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm"
 import {User} from "./User"
 
 @Entity()
@@ -10,10 +10,16 @@ export class Msg {
     @Column()
     level: number
 
+    @Column()
+    userId: number
     @ManyToOne(type => User, user => user.userMsgs)
-    userId: User
+    @JoinColumn({name: "userId"})
+    user: User
 
+    @Column()
+    guestId: number
     @ManyToOne(type => User, user => user.guestMsgs)
-    guestId: User
+    @JoinColumn({name: "guestId"})
+    guest: User
 
 }

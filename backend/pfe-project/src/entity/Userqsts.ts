@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm"
 import {Blanks} from "./Blanks"
 import {User} from "./User"
 
@@ -11,10 +11,16 @@ export class Userqsts {
     @Column()
     level: number
 
+    @Column()
+    userId: number
     @ManyToOne(type => User, user => user.userqsts)
-    userId: Blanks
+    @JoinColumn({name: "userId"})
+    user: User
 
+    @Column()
+    qstId: number
     @ManyToOne(type => Blanks, blanks => blanks.userqsts)
-    qstId: User
+    @JoinColumn({name: "qstId"})
+    qst: Blanks
 
 }

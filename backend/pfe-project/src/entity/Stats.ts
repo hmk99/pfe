@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne} from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn} from "typeorm"
 import { Type } from "./Type"
 import { User } from "./User"
 
@@ -20,7 +20,10 @@ export class Stats {
     @Column()
     saved: number
 
+    @Column()
+    userId: number
     @ManyToOne(type => User, user => user.stats)
-    userId: User
+    @JoinColumn({name: "userId"})
+    user: User
 
 }

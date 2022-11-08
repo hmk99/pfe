@@ -20,10 +20,10 @@ export class Type {
     @Column()
     title: string
 
-    @OneToMany(type => Cours, cours => cours.typeId)
+    @OneToMany(type => Cours, cours => cours.type)
     cours: Cours[]
 
-    @OneToMany(type => Conj, conj => conj.typeId)
+    @OneToMany(type => Conj, conj => conj.type)
     conjs: Conj[]
 
 }
