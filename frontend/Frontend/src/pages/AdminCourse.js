@@ -45,7 +45,7 @@ function AdminCourse() {
     const[addNewRule, setAddNewRule]= useState("")
     
     const getAllCours= ()=> {
-        Axios.get("http://localhost:3030/getAllCours")
+        Axios.get(`${process.env.REACT_APP_API_GET_ALL_COURS}`)
         .then((res)=> {
             setCours(res.data)
         })
@@ -54,7 +54,7 @@ function AdminCourse() {
         })
     }
     const getTypes= ()=> {
-        Axios.post("http://localhost:3030/getTypes", {all: true})
+        Axios.post(`${process.env.REACT_APP_API_GET_VERB_TYPES}`, {all: true})
         .then((res)=> {
             setTypes(res.data)
         })
@@ -63,7 +63,7 @@ function AdminCourse() {
         })
     }
     const getRules= ()=> {
-        Axios.get("http://localhost:3030/getAllConj")
+        Axios.get(`${process.env.REACT_APP_API_GET_ALL_CONJ}`)
         .then((res)=> {
             setDefOpen(false)
             setRules(res.data)
@@ -73,7 +73,7 @@ function AdminCourse() {
         })
     }
     const updateVerbDef= (def, id)=> {
-        Axios.post("http://localhost:3030/updateVerbDef", {def: def, id: id})
+        Axios.post(`${process.env.REACT_APP_API_UPDATE_VERB_DEF}`, {def: def, id: id})
         .then((res)=> {
             getAllCours()
         })
@@ -82,7 +82,7 @@ function AdminCourse() {
         })
     }
     const getTypeId= (title)=> {
-        Axios.post("http://localhost:3030/getTypeId", {title: title})
+        Axios.post(`${process.env.REACT_APP_API_GET_TYPE_ID}`, {title: title})
         .then(res=> {
             setTypeId(res.data[0].id)
         })
@@ -91,7 +91,7 @@ function AdminCourse() {
         })
     }
     const addRule= (typeId, elem)=> {
-        Axios.post("http://localhost:3030/addRule", {typeId: typeId, elem: elem})
+        Axios.post(`${process.env.REACT_APP_API_ADD_RULE}`, {typeId: typeId, elem: elem})
         .then((res)=> {
             getRules()
         })
@@ -100,7 +100,7 @@ function AdminCourse() {
         })
     }
     const updateRule= (elem, id)=> {
-        Axios.post("http://localhost:3030/updateRule", {elem: elem, id: id})
+        Axios.post(`${process.env.REACT_APP_API_UPDATE_RULE}`, {elem: elem, id: id})
         .then((res)=> {
             getRules()
         })
@@ -109,7 +109,7 @@ function AdminCourse() {
         })
     }
     const deleteRule= (id)=> {
-        Axios.post("http://localhost:3030/deleteRule", {id: id})
+        Axios.post(`${process.env.REACT_APP_API_DELETE_RULE}`, {id: id})
         .then((res)=> {
             getRules()
         })

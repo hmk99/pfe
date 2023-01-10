@@ -19,7 +19,6 @@ import BarChart from '../component/BarChart'
 import Dropdown from 'react-dropdown'
 
 function AdminStat() {
-  const url= "http://localhost:3030"
   const theme = useSelector((state) => state.user.theme)
   const [stats, setStats]= useState([])
   const [level, setLevel]= useState()
@@ -67,7 +66,7 @@ function AdminStat() {
     }
   }
   const getStats= ()=> {
-    Axios.post(`${url}/adminStats`, {fs: true})
+    Axios.post(`${process.env.REACT_APP_API_GET_ADMIN_STATS}`, {fs: true})
     .then(res=> {
       setStats(res.data)
       setReady(true)
@@ -77,7 +76,7 @@ function AdminStat() {
     })
   }
   const getLevels= ()=> {
-    Axios.post(`${url}/adminStats`, {fs: false})
+    Axios.post(`${process.env.REACT_APP_API_GET_ADMIN_STATS}`, {fs: false})
     .then(res=> {
       setLevels(res.data)
       setReadyLev(true)
@@ -87,7 +86,7 @@ function AdminStat() {
     })
   }
   const getSavedQsts= (level, order)=> {
-    Axios.post(`${url}/adminSavedQsts`, {level: level})
+    Axios.post(`${process.env.REACT_APP_API_GET_SAVED_QSTS}`, {level: level})
     .then(res=> {
       if(order=== true){
         setQsts(res.data.sort((a, b)=> {return b.nb - a.nb}))
@@ -102,7 +101,7 @@ function AdminStat() {
     })
   }
   const getTypes= ()=> {
-    Axios.post("http://localhost:3030/getTypes", {all: false})
+    Axios.post(`${process.env.REACT_APP_API_GET_VERB_TYPES}`, {all: false})
     .then((res)=> {
         setTypes(res.data)
     })
@@ -111,7 +110,7 @@ function AdminStat() {
     })
   }
   const getTypeName= (title)=> {
-    return Axios.post("http://localhost:3030/getTypeId", {title: title})
+    return Axios.post(`${process.env.REACT_APP_API_GET_TYPE_ID}`, {title: title})
     .then(res=> {
         return res.data[0].level
     })
@@ -232,7 +231,7 @@ function AdminStat() {
         <NavAdmin />
         <br /><br />
         <ol type= "1" style= {{marginTop: "10vh"}}>
-          <h1><li>متوسط مراحل المستخدمين:</li></h1>
+          <h1><li>نسبة المستخدمين في كل مرحلة:</li></h1>
           <div className="" style= {{width: "70%", margin: "auto"}}>
             {chartReady ?<><BarChart chartData=  {level} /> </>: <h1>يرجى الإنتظار</h1>}
           </div>

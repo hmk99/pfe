@@ -162,7 +162,6 @@ function Level2() {
             quizzScoreNeg++
         }
       })
-      console.log((((qcms.length- quizzScoreNeg)/ qcms.length)* 100).toFixed(2)+ "%")
       setQuizTry(true)
     }
   }

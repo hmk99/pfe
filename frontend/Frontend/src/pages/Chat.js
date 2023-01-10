@@ -106,8 +106,6 @@ function Chat() {
     const inf= useRef(null)
     useEffect(()=> {
         if(old.current!== null && inf!== null){
-        console.log(old)
-        console.log(inf)
         }
     }, [old])
     const displayOld= msgsOld.map(e=> {

@@ -48,14 +48,14 @@ function Admin() {
     }, [searchTerm])
     */
     const getUsers= ()=> {
-        Axios.post("http://localhost:3030/getUsers", {type: "admin"})
+        Axios.post(`${process.env.REACT_APP_API_GET_USERS}`, {type: "admin"})
         .then((res)=> {
             setUsers(res.data)
         })
     }
 
     const deleteUser= (googleId)=> {
-        Axios.post("http://localhost:3030/deleteUser", {googleId: googleId})
+        Axios.post(`${process.env.REACT_APP_API_DELETE_USER}`, {googleId: googleId})
         .then((res)=> {
             if(res){
                 getUsers()

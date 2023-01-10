@@ -101,7 +101,7 @@ function Qutrub() {
         getVerbs()
       }, [])
       const conj= (verb, temps, pronom)=> {
-        console.log(`le verbe est: ${verb}, le temps est: ${temps}, le pronom est: ${pronom}`)
+        //console.log(`le verbe est: ${verb}, le temps est: ${temps}, le pronom est: ${pronom}`)
         var uri = `https://qutrub.arabeyes.org/api?verb=${verb}`
         var url = encodeURI(uri)
         Axios.get(url)

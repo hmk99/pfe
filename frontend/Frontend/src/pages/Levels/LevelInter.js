@@ -41,7 +41,7 @@ function LevelInter({id, level}) {
     const[qcmsStat, setQcmsStat]= useState([])
     const[quizReady, setQuizReady]= useState(false)
     const[quizStatReady, setQuizStatReady]= useState(false)
-    const[quizz, setQuizz]= useState({q1: "", q2: "", q3: ""/*, q4: "", q5: "", q6: "", q7: "", q8: "", q9: "", q10: ""*/})
+    const[quizz, setQuizz]= useState({q1: "", q2: "", q3: "", q4: "", q5: "", q6: "", q7: "", q8: "", q9: "", q10: ""})
     const[quizReps, setQuizReps]= useState([])
     const[quizTry, setQuizTry]= useState(false)
     const[quizScore, setQuizScore]= useState(null)
@@ -69,8 +69,8 @@ function LevelInter({id, level}) {
     const [rating, setRating]= useState("") 
     const [savedLevel, setSavedLevel]= useState(false)
     const [fillRepsReady, setFillRepsReady]= useState(false)
-    const nbQuizz= 3
-    const nbFills= 7
+    const nbQuizz= 10
+    const nbFills= 35
     const [wait, setWait]= useState(false)
     const getSW= ()=> {
       Axios.post(`${url}/getSW`, {level: level})
@@ -192,9 +192,7 @@ function LevelInter({id, level}) {
         console.log(err)
       })
     }
-    useEffect(()=> {
-      console.log(fillReps)
-    }, [fillReps])
+
     /*
     const getFillReps= (type)=>{
         Axios.post("http://localhost:3030/getFillReps", {type: type})
@@ -505,9 +503,9 @@ function LevelInter({id, level}) {
           score++
         }
       })
-      console.log(score)
+      //console.log(score)
       setFillScore(((score/ nbFills)* 100).toFixed(2))
-      console.log(((score / nbFills)* 100).toFixed(2))
+      //console.log(((score / nbFills)* 100).toFixed(2))
       setFillTry(true)
     }
     const verbDC= (verb)=> {
@@ -524,8 +522,8 @@ function LevelInter({id, level}) {
   }
     const fillCorr= ()=> {
         const inputs= document.querySelectorAll('#blank')
-          if(!fillTry && (objEmpty(blankPss, 1)) && (objEmpty(blankPre, 1)) && (objEmpty(blankImp, 1)) && (objEmpty(blankMj, 1)) && (objEmpty(blankMn, 1)) && (objEmpty(blankPp, 1)) && (objEmpty(blankPr, 1)) ){
-            for (let i = 0; i < 1/*5*/; i++) {
+          if(!fillTry && (objEmpty(blankPss, 5)) && (objEmpty(blankPre, 5)) && (objEmpty(blankImp, 5)) && (objEmpty(blankMj, 5)) && (objEmpty(blankMn, 5)) && (objEmpty(blankPp, 5)) && (objEmpty(blankPr, 5)) ){
+            for (let i = 0; i < 5; i++) {
               if(eval(`blankPss.q${i+1}`)=== fillReps[i]){
                 inputs[i].style.backgroundColor= "#228b22"
                 inputs[i].style.color= "white"
@@ -534,8 +532,8 @@ function LevelInter({id, level}) {
                 inputs[i].style.color= "white"
               }
             }
-            for (let i = 1; i < 2/*10*/; i++) {
-              if(eval(`blankPre.q${i /*-4*/}`)=== fillReps[i]){
+            for (let i = 5; i < 10; i++) {
+              if(eval(`blankPre.q${i-4}`)=== fillReps[i]){
                 inputs[i].style.backgroundColor= "#228b22"
                 inputs[i].style.color= "white"
               }else{
@@ -543,8 +541,8 @@ function LevelInter({id, level}) {
                 inputs[i].style.color= "white"
               }
             }
-            for (let i = 2; i < 3/*15*/; i++) {
-              if(eval(`blankMj.q${i-1/*9*/}`)=== fillReps[i]){
+            for (let i = 10; i < 15; i++) {
+              if(eval(`blankMj.q${i-9}`)=== fillReps[i]){
                 inputs[i].style.backgroundColor= "#228b22"
                 inputs[i].style.color= "white"
               }else{
@@ -552,8 +550,8 @@ function LevelInter({id, level}) {
                 inputs[i].style.color= "white"
               }
             }
-            for (let i = 3; i < 4/*20*/; i++) {
-              if(eval(`blankMn.q${i-2/*14*/}`)=== fillReps[i]){
+            for (let i = 15; i < 20; i++) {
+              if(eval(`blankMn.q${i-14}`)=== fillReps[i]){
                 inputs[i].style.backgroundColor= "#228b22"
                 inputs[i].style.color= "white"
               }else{
@@ -561,8 +559,8 @@ function LevelInter({id, level}) {
                 inputs[i].style.color= "white"
               }
             }
-            for (let i = 4; i < 5/*25*/; i++) {
-              if(eval(`blankImp.q${i-3/*19*/}`)=== fillReps[i]){
+            for (let i = 20; i < 25; i++) {
+              if(eval(`blankImp.q${i-19}`)=== fillReps[i]){
                 inputs[i].style.backgroundColor= "#228b22"
                 inputs[i].style.color= "white"
               }else{
@@ -570,8 +568,8 @@ function LevelInter({id, level}) {
                 inputs[i].style.color= "white"
               }
             }
-            for (let i = 5; i < 6/*30*/; i++) {
-              if(eval(`blankPp.q${i-4/*24*/}`)=== fillReps[i]){
+            for (let i = 25; i < 30; i++) {
+              if(eval(`blankPp.q${i-24}`)=== fillReps[i]){
                 inputs[i].style.backgroundColor= "#228b22"
                 inputs[i].style.color= "white"
               }else{
@@ -579,8 +577,8 @@ function LevelInter({id, level}) {
                 inputs[i].style.color= "white"
               }
             }
-            for (let i = 6; i < 7/*35*/; i++) {
-              if(eval(`blankPr.q${i-5/*29*/}`)=== fillReps[i]){
+            for (let i = 30; i < 35; i++) {
+              if(eval(`blankPr.q${i-29}`)=== fillReps[i]){
                 inputs[i].style.backgroundColor= "#228b22"
                 inputs[i].style.color= "white"
               }else{
@@ -683,7 +681,7 @@ function LevelInter({id, level}) {
               op3[i].style.backgroundColor= "black"
               op3[i].style.color= "white"
           })
-          }/*
+          }
           op4[i].addEventListener('click', ()=> {
               op4.forEach(e=> {
                   e.style.backgroundColor= "white"
@@ -739,7 +737,7 @@ function LevelInter({id, level}) {
               })
               op10[i].style.backgroundColor= "black"
               op10[i].style.color= "white"
-          })*/
+          })
         }
       }
     }, [quizReady, quizTry, user.theme])

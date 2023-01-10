@@ -40,7 +40,7 @@ function LevelTtest() {
     const ref2= useRef(null)
     const ref3= useRef(null)
     const ref4= useRef(null)
-    const succMoy= 30
+    const succMoy= 70
     const executeScroll = (ref) => scrollToRef(ref)
     const getQcms= ()=> {
         for (let i = 0; i < 5; i++) {

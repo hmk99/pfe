@@ -32,7 +32,7 @@ function AdminNotes() {
     }
 
     const getNotes= (level, rating)=> {
-        Axios.post(`${url}/getNotes`, {level: level})
+        Axios.post(`${process.env.REACT_APP_API_GET_NOTES}`, {level: level})
         .then(res=> {
             if(rating!== ""){
                 setNotes(res.data.filter((val)=> {if(val.rating=== rating) {return val}}))
@@ -44,14 +44,14 @@ function AdminNotes() {
         })
     }
     const getNotesStat= (level, rating)=> {
-        Axios.post(`${url}/getNotesStat`, {level: level})
+        Axios.post(`${process.env.REACT_APP_API_GET_NOTES_STAT}`, {level: level})
         .then(res=> {
             setStats(res.data)
             setReady(true)
         })
     }
     const getTypes= ()=> {
-        Axios.post("http://localhost:3030/getTypes", {all: false})
+        Axios.post(`${process.env.REACT_APP_API_GET_VERB_TYPES}`, {all: false})
         .then((res)=> {
             setTypes(res.data)
         })
@@ -81,7 +81,7 @@ function AdminNotes() {
         )
     })
     const getTypeName= (title)=> {
-        return Axios.post("http://localhost:3030/getTypeId", {title: title})
+        return Axios.post(`${process.env.REACT_APP_API_GET_TYPE_ID}`, {title: title})
         .then(res=> {
             return res.data[0].level
         })

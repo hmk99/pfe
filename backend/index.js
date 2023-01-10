@@ -57,8 +57,6 @@ io.on("connection", (socket)=> {
 })
 
 
-
-
 const db= mysql.createConnection({
     user: 'hmk',
     host: 'localhost',
@@ -142,7 +140,6 @@ app.post("/loginGF", (req,res)=> {
     (err,result)=> {
         if(err){
             res.send(null)
-            console.log("FAILED")
         }else{
             res.send(result)
             //console.log(result)
@@ -426,7 +423,7 @@ app.post("/getBlanks", (req, res)=> {
     const salim= req.body.salim
     const weak= req.body.weak
     const temps= req.body.temps
-    db.query(`select f.*, ROW_NUMBER() OVER(ORDER BY id DESC) row from (select * from blanks where salim= ? and weak= ? and temps= ? order by rand() limit 1) as f`, [salim, weak, temps],
+    db.query(`select f.*, ROW_NUMBER() OVER(ORDER BY id DESC) row from (select * from blanks where salim= ? and weak= ? and temps= ? order by rand() limit 5) as f`, [salim, weak, temps],
     (err, result)=> {
         if(err){
             console.log(err)
@@ -453,7 +450,7 @@ const sampleSize = (arr, n) => {
 app.post("/getQcms", (req, res)=> {
     const salim= req.body.salim
     const weak= req.body.weak
-    db.query(`select f.*, ROW_NUMBER() OVER(ORDER BY id DESC) row from ((select * from blanks WHERE temps in (1, 2) and (freq> 100000 or freq> 10000 or freq= 0) and salim= ? and weak= ?  and op1<> "" and op2<> "" and op3<> "" and op4<> "" ORDER by freq DESC, rand() limit 1) union (select * from blanks WHERE temps in (3, 4) and (freq> 100000 or freq> 10000 or freq= 0) and salim= ? and weak= ? and op1<> "" and op2<> "" and op3<> "" and op4<> "" ORDER by freq DESC, rand() limit 1) union (select * from blanks WHERE temps in (6, 8, 9) and (freq> 100000 or freq> 10000 or freq= 0) and salim= ? and weak= ? and op1<> "" and op2<> "" and op3<> "" and op4<> "" ORDER by freq DESC, rand() limit 1)) as f`, [salim, weak, salim, weak, salim, weak],
+    db.query(`select f.*, ROW_NUMBER() OVER(ORDER BY id DESC) row from ((select * from blanks WHERE temps in (1, 2) and (freq> 100000 or freq> 10000 or freq= 0) and salim= ? and weak= ?  and op1<> "" and op2<> "" and op3<> "" and op4<> "" ORDER by freq DESC, rand() limit 4) union (select * from blanks WHERE temps in (3, 4) and (freq> 100000 or freq> 10000 or freq= 0) and salim= ? and weak= ? and op1<> "" and op2<> "" and op3<> "" and op4<> "" ORDER by freq DESC, rand() limit 3) union (select * from blanks WHERE temps in (6, 8, 9) and (freq> 100000 or freq> 10000 or freq= 0) and salim= ? and weak= ? and op1<> "" and op2<> "" and op3<> "" and op4<> "" ORDER by freq DESC, rand() limit 3)) as f`, [salim, weak, salim, weak, salim, weak],
     (err, result)=> {
         if(err){
             console.log(err)
@@ -465,7 +462,7 @@ app.post("/getQcms", (req, res)=> {
 app.post("/getDnds", (req, res)=> {
     const salim= req.body.salim
     const weak= req.body.weak
-    db.query(`select f.*, ROW_NUMBER() OVER(ORDER BY id DESC) row from ((select * from blanks WHERE temps in (1, 2) and (freq= 0) and salim= ? and weak= ?  and op1<> "" and op2<> "" and op3<> "" and op4<> "" ORDER by freq DESC, rand() limit 1) union (select * from blanks WHERE temps in (3, 4) and (freq= 0) and salim= ? and weak= ? and op1<> "" and op2<> "" and op3<> "" and op4<> "" ORDER by freq DESC, rand() limit 1) union (select * from blanks WHERE temps in (6, 8, 9) and (freq= 0) and salim= ? and weak= ? and op1<> "" and op2<> "" and op3<> "" and op4<> "" ORDER by freq DESC, rand() limit 1)) as f`, [salim, weak, salim, weak, salim, weak],
+    db.query(`select f.*, ROW_NUMBER() OVER(ORDER BY id DESC) row from ((select * from blanks WHERE temps in (1, 2) and (freq= 0) and salim= ? and weak= ?  and op1<> "" and op2<> "" and op3<> "" and op4<> "" ORDER by freq DESC, rand() limit 4) union (select * from blanks WHERE temps in (3, 4) and (freq= 0) and salim= ? and weak= ? and op1<> "" and op2<> "" and op3<> "" and op4<> "" ORDER by freq DESC, rand() limit 3) union (select * from blanks WHERE temps in (6, 8, 9) and (freq= 0) and salim= ? and weak= ? and op1<> "" and op2<> "" and op3<> "" and op4<> "" ORDER by freq DESC, rand() limit 3)) as f`, [salim, weak, salim, weak, salim, weak],
     (err, result)=> {
         if(err){
             console.log(err)
@@ -573,7 +570,6 @@ app.post("/addSavedQst", (req, res)=> {
         }
         else{
             res.send("ADD")
-            console.log("ADD SAVED")
         }
     })
 })
@@ -611,7 +607,6 @@ app.post('/deleteSavedQst', (req, res)=> {
         }
         else{
             res.send("DEL")
-            console.log("DELSavedQst")
         }
     })
 })
@@ -625,7 +620,6 @@ app.post("/updateUserName", (req, res)=> {
             console.log(err)
         }else{
             res.send("UPD")
-            console.log("UPDUserName")
         }
     })
 })
@@ -637,7 +631,6 @@ app.post("/deleteUserName", (req, res)=> {
             console.log(err)
         }else{
             res.send("DEL")
-            console.log("DELUserName")
         }
     })
 })
@@ -653,7 +646,7 @@ app.post("/adminStats", (req, res)=> {
             }
         })
     }else{
-        db.query("select level, count(*) / 11 levels from user GROUP by level", 
+        db.query("select level, count(*) / (select count(*) from user) levels from user GROUP by level;", 
         (err, result)=> {
             if(err){
                 console.log(err)
@@ -748,7 +741,6 @@ app.post("/getMsgs", (req, res)=> {
             console.log(err)
         }else{
             res.send(result)
-            //console.log(result)
         }
     })
 })
@@ -836,10 +828,7 @@ app.post("/sendNote", (req, res)=> {
         }
     })
 })
-/*
-app.listen(3030,()=>{
-    console.log('server started')
-})*/
+
 server.listen(3030, ()=> {
     console.log("server started")
 })

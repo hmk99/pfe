@@ -244,19 +244,19 @@ const Home= ()=> {
       </div>
         <div className="Home_first">
             <div className="Home_first_container">
-              <motion.h1 animate={{opacity: 1, x: 0, rotate: -7}} transition= {{delay: 2, duration: 0.5}} initial={{opacity: 0, x: -1000}}>
+              <motion.h1 animate={{opacity: 1, x: 0, rotate: -7}} transition= {{delay: 0, duration: 0.5}} initial={{opacity: 0, x: -1000}}>
                 تعلم التصريف العربي بسهولة
               </motion.h1>
-              <motion.img animate={{width: "50%", rotate: -7}} transition= {{delay: 2.5, duration: 0.5}} initial={{width: 0}}  src="https://f.hubspotusercontent20.net/hubfs/6968579/Memrise%20July%202020/Images/blue-flash.svg" alt=""/>
+              <motion.img animate={{width: "50%", rotate: -7}} transition= {{delay: 0.5, duration: 0.5}} initial={{width: 0}}  src="https://f.hubspotusercontent20.net/hubfs/6968579/Memrise%20July%202020/Images/blue-flash.svg" alt=""/>
               <br />
               <br />
               <center>
-                <motion.p animate={{scale: 2}} transition= {{delay: 3, duration: 0.5}} initial={{scale: 0}}>
+                <motion.p animate={{scale: 2}} transition= {{delay: 1, duration: 0.5}} initial={{scale: 0}}>
                   أمثلة و تمارين بسيطة من أجل التعلم بسرعة و بمتعة
                 </motion.p>
               </center>
             </div>
-            <motion.button animate={{opacity: 1, y: 0}} transition= {{delay: 3.5, duration: 0.5}} initial={{opacity: 0, y: 1000}}>
+            <motion.button animate={{opacity: 1, y: 0}} transition= {{delay: 1.5, duration: 0.5}} initial={{opacity: 0, y: 1000}}>
               <Link id='link' to="/register">
                 إنشاء حساب   
               </Link>

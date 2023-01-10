@@ -260,7 +260,7 @@ img + p{
 }
 .loginGBtn{
     height: 5vh;
-    width: max-content;
+    width: 40vh;
     border: 0.125rem solid #373B44 !important;
     box-shadow: rgb(43 54 72) 0px 0.25rem 0px !important;
     border-radius: 20px !important;
@@ -272,10 +272,11 @@ img + p{
 }
 .loginGBtn div{
     background-color: transparent !important;
+    width: 20%;
 }
 .kep-login-facebook{
     height: 5vh !important;
-    width: max-content ;
+    width: 40vh;
     border: 0.125rem solid #373B44 !important;
     box-shadow: rgb(43 54 72) 0px 0.25rem 0px !important;
     border-radius: 20px !important;

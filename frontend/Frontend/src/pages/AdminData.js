@@ -21,7 +21,7 @@ function AdminData() {
     const [ready, setReady]= useState(false)
 
     const getData= (type)=> {
-        Axios.post(`${url}/dataCsv`, {type: type})
+        Axios.post(`${process.env.REACT_APP_API_GET_DATA_CSV}`, {type: type})
         .then((res)=> {
             if(type=== 0){
                 setQsts(res.data)

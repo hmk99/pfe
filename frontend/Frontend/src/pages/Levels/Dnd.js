@@ -16,7 +16,7 @@ function Dnd({salim, weak, level}) {
     const[dataReady, setDataReady]= useState(false)
     const[colReady, setColReady]= useState(false)
     const[dndTry, setDndTry]= useState(false)
-    const nbDnd= 3
+    const nbDnd= 10
     const getQsts= ()=> {
         Axios.post(`${url}/getDnds`, {salim: salim, weak: weak})
         .then((res)=> {
@@ -77,7 +77,7 @@ function Dnd({salim, weak, level}) {
                     optionDg:
                         {
                             id: e[0].id,
-                            name: /*level== 0? `${e[0].qst}`:*/ `${e[0].pronom} (${e[0].qst}) في ${crr(e[0].temps)}:`,
+                            name: level== 0? `${e[0].qst}`: `${e[0].pronom} (${e[0].qst}) في ${crr(e[0].temps)}:`,
                             items: e.slice(1)
                         },
                     optionDp: 
@@ -287,7 +287,6 @@ function Dnd({salim, weak, level}) {
         }
       }
       setDndTry(true)
-      console.log(score)
       dispatch(setScore({score: ((score/ nbDnd)* 100).toFixed(2) }))
     } 
   }

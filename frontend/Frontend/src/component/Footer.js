@@ -22,7 +22,7 @@ function Footer() {
     >
         <ul style= {child}>
             <h3>راسلنا: </h3>
-            <li><a style= {link} href = "mailto: mustaphade1999@gmail.com">ابعث رسالة</a></li>
+            <li><a style= {link} href = "mailto: taha.zerrouki@gmail.com">ابعث رسالة</a></li>
         </ul>
         <ul style= {child}>
             <h3>القائمة: </h3>
